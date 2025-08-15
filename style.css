@@ -10,14 +10,14 @@ body{
 }
 
 h1{
-    color: black;
+    color: white;
     text-align: center;
 }
 
 .container{
     width: 800px;
     height: 450px;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    background: linear-gradient(90deg, #363636, #535353);
     margin: 200px auto;
     border-radius: 20px;
     padding: 20px;
@@ -26,16 +26,16 @@ h1{
 
 #quote{
     font-size: 24px;
-    color: black;
+    color: white;
     text-align: center;
     margin-top: 80px;
 }
 
 #author{
     font-size: 20px;
-    color: black;
+    color: white;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #new-quote{
@@ -45,20 +45,21 @@ h1{
     position: absolute;
     top: 300px;
     left: 300px;
-    background-color: rgb(43, 43, 43);
-    color: white;
-    border: none;
-    border-radius: 10px;
+    background-color: black;
+    color: rgb(0, 153, 255);
+    border: 2px rgb(0, 153, 255) solid;
+    border-radius: 7px;
     font-size: 18px;
     cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 #new-quote:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s;
-    background-color: rgb(32, 32, 32);
+    box-shadow: 0 0 5px rgb(0, 153, 255), 0 0 10px rgb(0, 153, 255);
+    transform: scale(1.05);
 }
 #new-quote:active{
-    transform: scale(0.9);
+    box-shadow: 0 0 3px rgb(0, 153, 255), 0 0 5px rgb(0, 153, 255);
+    transform: scale(1);
 }
 
 .buttons {
@@ -67,47 +68,44 @@ h1{
     left: 520px;
 }
 
-/* Tweet Quote Button dodati ikonicu za tviter */
-#tweet-quote{
+#tweet-quote, #copy-quote {
     display: inline-block;
     width: 120px;
     height: 50px;
-    background-color: #1DA1F2;
-    color: white;
-    text-decoration: none;
     text-align: center;
     line-height: 50px;
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
-}
-#tweet-quote:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s;
-}
-#tweet-quote:active{
-    transform: scale(1);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent; /* za uniformnost sa new-quote */
 }
 
-/* Copy Quote Button dodati ikonicu za copy to clipboard*/
-#copy-quote{
-    display: inline-block;
-    width: 120px;
-    height: 50px;
+#tweet-quote {
+    background-color: #1DA1F2;
+    color: white;
+    border-color: #1DA1F2;
+}
+
+#copy-quote {
     background-color: black;
     color: white;
-    text-decoration: none;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 10px;
-    font-size: 18px;
+    border-color: white;
     margin-left: 10px;
-    font-weight: bold;
 }
-#copy-quote:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s;
+
+#tweet-quote:hover {
+    box-shadow: 0 0 5px #1DA1F2, 0 0 5px white;
+    transform: scale(1.05);
 }
-#copy-quote:active{
+
+#copy-quote:hover {
+    box-shadow: 0 0 5px white, 0 0 10px white;
+    transform: scale(1.05);
+}
+
+#tweet-quote:active, #copy-quote:active {
+    box-shadow: 0 0 3px currentColor, 0 0 5px currentColor;
     transform: scale(1);
 }
